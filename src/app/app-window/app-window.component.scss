@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.textCont {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.btn {
+  text-align: center;
+  width: 200px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-left: 25px;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+  color: dimgrey;
+  box-shadow: 6px 6px 20px rgb(0 0 0);
+  @extend .textCont
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn:active {
+  background: black;
+}
+
+.main-window {
+  width: 700px;
+  height: 700px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background: #a99f9f;
+  box-shadow: 6px 6px 20px rgb(0 0 0);
+}
+
+h1 {
+  font-size: 70px;
+  text-align: center;
+  margin-top: 50px;
+  color: #8326ff;
+  @extend .textCont
+
+}
+
+.input-fields {
+  margin: 100px auto;
+}
+
+.input-fields > input {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  border: 5px solid;
+  margin-left: 170px;
+  font-size: 70px;
+  text-align: center;
+}
+
+.start {
+  @extend .btn;
+  background: greenyellow;
+}
+
+.stop {
+  @extend .btn;
+  background: red;
+}
+
+.refresh {
+  @extend .btn;
+  background: yellow;
+
+}
+
+.redColor {
+  color: red;
+  border: red;
+}
+
+.blueColor {
+  color: blue;
+  border: blue;
+}
+
