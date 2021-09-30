@@ -1,0 +1,16 @@
+<div class="main-window">
+
+  <h1>Angular Test Task</h1>
+
+  <div class="input-fields">
+    <input [class.blueColor]="toggleClass(first)" class="redColor" type="text" value="{{first}}" readonly>
+    <input [class.blueColor]="toggleClass(second)" class="redColor" type="text" value="{{second}}" readonly>
+  </div>
+
+  <div class="buttons">
+    <button [disabled]="!disabled"class="stop" (click)="stopChanges()">Stop</button>
+    <button [disabled]="disabled" class="start" (click)="startChanges()">{{nameBtn}}</button>
+    <button  class="reset" (click)="resetVar()">Reset</button>
+  </div>
+
+</div>

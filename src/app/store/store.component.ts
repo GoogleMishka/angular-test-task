@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-store',
@@ -7,9 +7,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  constructor() { }
+  start!: number
+  intervalID: number = 1000
+  firstVariable: number = -5
+  secondVariable: number = 10
 
-  ngOnInit(): void {
+  constructor() {
+
   }
 
+  ngOnInit(): void {
+
+  }
+
+  increase() {
+    this.firstVariable++
+  }
+
+  decrease() {
+    this.secondVariable--
+  }
+
+  change() {
+    this.increase()
+    this.decrease()
+    this.decrease()
+  }
+
+  startChanges() {
+    this.intervalID = setInterval(() => {
+      this.change()
+    }, 1000)
+  }
+
+  checkClick($event: string) {
+    switch ($event) {
+      case 'start':
+        this.startChanges()
+        break
+      case 'stop':
+        clearInterval(this.intervalID)
+        break
+      case 'reset':
+        window.location.reload()
+        break
+    }
+  }
 }

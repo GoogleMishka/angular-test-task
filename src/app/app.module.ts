@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { AppWindowComponent } from './app-window/app-window.component';
-import { StoreComponent } from './store/store.component';
+import {AppComponent} from './app.component';
+import {AppWindowComponent} from './store/app-window/app-window.component';
+import {StoreComponent} from './store/store.component';
 
 @NgModule({
   declarations: [
@@ -17,4 +17,5 @@ import { StoreComponent } from './store/store.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
