@@ -37,4 +37,8 @@ export class AppWindowComponent implements OnInit {
   resetVar() {
     this.clickMade.emit('reset')
   }
+
+
 }
+
+

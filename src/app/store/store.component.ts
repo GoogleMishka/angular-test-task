@@ -7,7 +7,6 @@ import {Component, OnInit} from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  start!: number
   intervalID: number = 1000
   firstVariable: number = -5
   secondVariable: number = 10
