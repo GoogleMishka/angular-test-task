@@ -46,9 +46,9 @@ describe('StoreComponent', () => {
     expect(comp.secondVariable).toBeLessThan(result1)
   })
 
-  it('should be defined', () => {
-    comp.startChanges()
-    expect(comp.intervalID).toBeDefined()
+  it('should return defined Subscription value', () => {
+    comp.startWithoutTimeInterval()
+    expect(comp.sub).toBeDefined()
   })
 
   it(`should return defined variables`, () => {

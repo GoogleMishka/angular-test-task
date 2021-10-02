@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {interval, Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-store',
@@ -7,9 +8,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  intervalID: number = 1000
   firstVariable: number = -5
   secondVariable: number = 10
+  intervalStream: Observable<number> = interval(1000)
+  sub!: Subscription
 
   constructor() {
 
@@ -33,19 +35,19 @@ export class StoreComponent implements OnInit {
     this.decrease()
   }
 
-  startChanges() {
-    this.intervalID = setInterval(() => {
+  startWithoutTimeInterval() {
+    this.sub = this.intervalStream.subscribe(() => {
       this.change()
-    }, 1000)
+    })
   }
 
   checkClick($event: string) {
     switch ($event) {
       case 'start':
-        this.startChanges()
+        this.startWithoutTimeInterval()
         break
       case 'stop':
-        clearInterval(this.intervalID)
+        this.sub.unsubscribe()
         break
       case 'reset':
         window.location.reload()
